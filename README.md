@@ -36,6 +36,7 @@ git clone https://github.com/Shreyank031/NewsApp_AndroidProject.git
 - Gson: For serializing and deserializing JSON data.
 - StackLayoutManager: For implementing a stack-based layout for RecyclerView.
 - Glide: For loading and caching images from URLs.
+- Allows users to view the full article in a web browser.
 
 ## Configuration
 

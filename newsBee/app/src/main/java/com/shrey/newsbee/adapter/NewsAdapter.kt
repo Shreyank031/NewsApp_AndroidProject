@@ -1,6 +1,7 @@
 package com.shrey.newsbee.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.shrey.newsbee.R
+import com.shrey.newsbee.activity.WebActivity
 import com.shrey.newsbee.model.Article
 
 // Adapter class for displaying news articles in a RecyclerView
@@ -42,13 +44,21 @@ class NewsAdapter(val context: Context, val article: List<Article>) :
             // Display a toast message when the item is clicked
             Toast.makeText(context, "Clicked on ${holder.newsTitle.text}", Toast.LENGTH_SHORT)
                 .show()
+            // Open the web activity to display the full article
+            val intent = Intent(context, WebActivity::class.java)
+            intent.putExtra("URL", art.url)
+            context.startActivity(intent)
+
         }
     }
 
     // ViewHolder class to hold references to views
     class ArticleNewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val newsImage = itemView.findViewById<ImageView>(R.id.imgNews) // Image view for article image
-        val newsTitle = itemView.findViewById<TextView>(R.id.txtNewsTitle) // Text view for article title
-        val newsDescription = itemView.findViewById<TextView>(R.id.txtNewsDescription) // Text view for article description
+        val newsImage =
+            itemView.findViewById<ImageView>(R.id.imgNews) // Image view for article image
+        val newsTitle =
+            itemView.findViewById<TextView>(R.id.txtNewsTitle) // Text view for article title
+        val newsDescription =
+            itemView.findViewById<TextView>(R.id.txtNewsDescription) // Text view for article description
     }
 }
