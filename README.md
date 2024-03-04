@@ -26,7 +26,7 @@ git clone https://github.com/Shreyank031/NewsApp_AndroidProject.git
 
 1. Open the project in Android Studio.
 
-2. Obtain an API key from newsapi.org and replace the 'API_KEY' constant in the 'NewsInterface' interface with your API key.
+2. Obtain an API key from newsapi.org and replace the `API_KEY` constant in the `NewsInterface` interface with your API key.
 
 3. Build and run the application on an Android device or emulator.
 
@@ -39,8 +39,8 @@ git clone https://github.com/Shreyank031/NewsApp_AndroidProject.git
 
 ## Configuration
 
-To use the News API, you need to obtain an API key from newsapi.org and replace the 'API_KEY' constant in the 
-'NewsInterface' interface with your API key.
+To use the News API, you need to obtain an API key from newsapi.org and replace the `API_KEY` constant in the 
+`NewsInterface` interface with your API key.
 
 ## Credits
 
