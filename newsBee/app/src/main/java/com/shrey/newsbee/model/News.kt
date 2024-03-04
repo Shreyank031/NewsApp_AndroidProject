@@ -1,4 +1,6 @@
-package com.shrey.newsbee
+package com.shrey.newsbee.model
+
+import com.shrey.newsbee.model.Article
 
 // Data class representing the response from the News API
 data class News(

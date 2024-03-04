@@ -1,9 +1,8 @@
-package com.shrey.newsbee
+package com.shrey.newsbee.network
 
-import com.google.gson.Gson
+import com.shrey.newsbee.model.News
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -39,17 +38,3 @@ object NewsService {
         newsInterface = retrofit.create(NewsInterface::class.java)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

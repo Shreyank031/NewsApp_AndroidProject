@@ -1,4 +1,4 @@
-package com.shrey.newsbee
+package com.shrey.newsbee.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.shrey.newsbee.R
+import com.shrey.newsbee.model.Article
 
 // Adapter class for displaying news articles in a RecyclerView
 class NewsAdapter(val context: Context, val article: List<Article>) :
