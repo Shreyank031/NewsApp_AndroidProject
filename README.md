@@ -19,7 +19,8 @@ NOTE: Still the project is in developing(incomplete) stage.
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/Shreyank031/NewsApp_AndroidProject.git
+git clone https://github.com/Shreyank031/NewsApp_AndroidProject.git 
+```
 
 ## Steps 
 
