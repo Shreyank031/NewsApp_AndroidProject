@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapterr: NewsAdapter // Adapter for displaying news articles
     private var arc =
         mutableListOf<Article>() // List to hold articles. which is empty initially without data
+    var pageNum = 1 // Page number for pagination
+    var Tag = "Discipline" //Tag for logging
+    var totalResult = -1 // Total number of results. For now just initialize any number
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +43,16 @@ class MainActivity : AppCompatActivity() {
                 // Change background color of ConstraintLayout when item changes
                 val container: ConstraintLayout = findViewById(R.id.container)
                 container.setBackgroundColor(Color.parseColor(ColorPicker.getColor()))
+                // Log first visible item position and total count
+                Log.d(Tag, "First visible Item - ${layoutmanager.getFirstVisibleItemPosition()}")
+                Log.d(Tag, "Total Count - ${layoutmanager.itemCount}")
+                // itemcount = 37 and totalResult = 38. So layoutmanager.itemcount + 1
+                // Load more data if the user is close to the end of the list
+                if (totalResult > layoutmanager.itemCount + 1 && layoutmanager.getFirstVisibleItemPosition() >= layoutmanager.itemCount - 5) {
+                    pageNum++
+                    getNews()
+
+                }
             }
         })
 
@@ -52,8 +65,10 @@ class MainActivity : AppCompatActivity() {
 
     // Function to fetch news data from the News API
     private fun getNews() {
+        // Log request sent for page number
+        Log.d(Tag, "Request sent for - $pageNum")
         // Create a call to fetch headlines for a specific country (in this case, "in" for India) and page number
-        val newsCall = NewsService.newsInterface.getHeadlines("in", 1)
+        val newsCall = NewsService.newsInterface.getHeadlines("in", pageNum)
         // Asynchronously execute the call
         newsCall.enqueue(object : retrofit2.Callback<News> {
             // Callback invoked when the request fails
@@ -70,7 +85,8 @@ class MainActivity : AppCompatActivity() {
                 if (news != null) {
                     // Log the retrieved news data
                     Log.d("Yallah", news.toString())
-                    // Add fetched articles to the list and notify adapter
+                    // Update total result count and add fetched articles to the list, then notify adapter
+                    totalResult = news.totalResults
                     arc.addAll(news.articles)
                     adapterr.notifyDataSetChanged()
                 }

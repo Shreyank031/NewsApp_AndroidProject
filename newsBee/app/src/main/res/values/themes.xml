@@ -4,6 +4,10 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@null</item>
     </style>
 
     <style name="Theme.NewsBee" parent="Base.Theme.NewsBee" />
