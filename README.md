@@ -5,7 +5,6 @@ NewsBee is an Android application that provides users with the latest news
 headlines from around the world. It utilizes the News API to fetch news data
 and display it to the users in a user-friendly interface.
 
-NOTE: Still the project is in developing(incomplete) stage.
 
 ## Features
 
